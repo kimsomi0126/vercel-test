@@ -15,7 +15,6 @@ import { Link } from "react-router-dom";
 
 const NotiAlarm = () => {
   const [notiPush, setNotiPush] = useRecoilState(pushState);
-  const [notiList, setNotiList] = useState([]);
   const [isListOpen, setIsListOpen] = useState(false);
   // 로그인체크
   const { isLogin, loginState } = useCustomLogin();
@@ -26,24 +25,18 @@ const NotiAlarm = () => {
     obj =>
       Object.prototype.hasOwnProperty.call(obj, iuser) && obj[iuser] === userNm,
   );
-  // data 갯수
-  const [totalCnt, setTotalCnt] = useState(false);
+  // data
+  let notiList = data[0].data || [];
+  const totalCnt = !data[0].totalCnt || data[0].totalCnt === 0 ? false : true;
   const listRef = useRef(null);
 
   // 화면 나오면 data 값 넣기
   useEffect(() => {
-    if (data.length > 0) {
-      setNotiList(data[0].data);
-      setTotalCnt(!data[0].totalCnt || data[0].totalCnt === 0 ? false : true);
-    } else {
-      setNotiList([]);
-    }
     // const handleOutsideClose = e => {
     //   if (isListOpen && !listRef.current.contains(e.target))
     //     setIsListOpen(false);
     // };
     // document.addEventListener("click", handleOutsideClose);
-
     // return () => document.removeEventListener("click", handleOutsideClose);
   }, [totalCnt]);
 
@@ -59,7 +52,7 @@ const NotiAlarm = () => {
       ...notiList.slice(0, index),
       ...notiList.slice(index + 1),
     ];
-    setNotiList(updatedNotiList);
+    notiList = updatedNotiList;
 
     // notiPush 업데이트
     setNotiPush(prev => {

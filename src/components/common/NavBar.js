@@ -45,7 +45,7 @@ const NavBar = () => {
   };
   // 푸시알림 State
   const [notiPush, setNotiPush] = useRecoilState(pushState);
-  // console.log(notiPush);
+  console.log(notiPush);
 
   // 알림사용 승인 후 firebase 토큰 가져오기
   useEffect(() => {
