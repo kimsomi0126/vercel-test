@@ -26,7 +26,7 @@ const NotiAlarm = () => {
       Object.prototype.hasOwnProperty.call(obj, iuser) && obj[iuser] === userNm,
   );
   // data
-  let notiList = data[0].data || [];
+  let notiList = data[0].data ? data[0].data : [];
   const totalCnt = !data[0].totalCnt || data[0].totalCnt === 0 ? false : true;
   const listRef = useRef(null);
 
