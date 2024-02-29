@@ -26,9 +26,15 @@ const NotiAlarm = () => {
       Object.prototype.hasOwnProperty.call(obj, iuser) && obj[iuser] === userNm,
   );
   // data
-  let notiList = data[0].data ? data[0].data : [];
-  const totalCnt = !data[0].totalCnt || data[0].totalCnt === 0 ? false : true;
+  let notiList = [];
+  let totalCnt = false;
+  if (data.length > 0) {
+    notiList = data[0].data;
+    totalCnt = !data[0].totalCnt || data[0].totalCnt === 0 ? false : true;
+  }
+
   const listRef = useRef(null);
+  console.log(notiList);
 
   // 화면 나오면 data 값 넣기
   useEffect(() => {
