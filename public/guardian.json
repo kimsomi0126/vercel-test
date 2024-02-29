@@ -1,0 +1,90 @@
+[
+  {
+    "iparent": 1,
+    "parentNm": "봉미선",
+    "uid": "bong11",
+    "phoneNb": "010-1234-5678",
+    "kids": [
+      {
+        "kidNm": "신짱구",
+        "iclass": 2
+      },
+      {
+        "kidNm": "신짱아",
+        "iclass": 1
+      }
+    ]
+  },
+  {
+    "iparent": 2,
+    "parentNm": "정혜선",
+    "uid": "hyeseon1",
+    "phoneNb": "010-1234-5678",
+    "kids": [
+      {
+        "kidNm": "한유리",
+        "iclass": 3
+      }
+    ]
+  },
+  {
+    "iparent": 3,
+    "parentNm": "도선경",
+    "uid": "do123",
+    "phoneNb": "010-1234-5678",
+    "kids": [
+      {
+        "kidNm": "맹맹구",
+        "iclass": 1
+      }
+    ]
+  },
+  {
+    "iparent": 4,
+    "parentNm": "김소미",
+    "uid": "somi0126",
+    "phoneNb": "010-1234-5678",
+    "kids": [
+      {
+        "kidNm": "한수지",
+        "iclass": 2
+      }
+    ]
+  },
+  {
+    "iparent": 5,
+    "parentNm": "김도현",
+    "uid": "kdh1234",
+    "phoneNb": "010-1234-5678",
+    "kids": [
+      {
+        "kidNm": "김철수",
+        "iclass": 3
+      }
+    ]
+  },
+  {
+    "iparent": 6,
+    "parentNm": "이상재",
+    "uid": "sangjae1",
+    "phoneNb": "010-1234-5678",
+    "kids": [
+      {
+        "kidNm": "이훈이",
+        "iclass": 3
+      }
+    ]
+  },
+  {
+    "iparent": 7,
+    "parentNm": "맹맹맹",
+    "uid": "maeng1",
+    "phoneNb": "010-1234-5678",
+    "kids": [
+      {
+        "kidNm": "맹맹구",
+        "iclass": 1
+      }
+    ]
+  }
+]

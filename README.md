@@ -1,20 +1,20 @@
 <div align= "center">
-    <img src="https://capsule-render.vercel.app/api?type=cylinder&color=4a4b6d&height=120&text=Culture%20Log%20:%20문화생활%20기록%20서비스&animation=fadeIn&fontColor=ffffff&fontSize=40" />
+    <img src="https://capsule-render.vercel.app/api?type=waving&color=auto&height=120&text=떡잎유치원%20%20:%20영유아%20커뮤니케이션%20서비스&animation=&fontColor=000000&fontSize=40" />
     </div>
     <div style="text-align: left;"> 
-    <h2 style="border-bottom: 1px solid #d8dee4; color: #282d33;">📔 프로젝트 정보 </h2>  
-    <div style="font-weight: 700; font-size: 15px; text-align: left; color: #282d33;">
-    - OTT, 영화, 드라마, 연극, 뮤지컬, 콘서트 등 내가 본 컨텐츠와 볼 컨텐츠를 함께 기록하는 일정관리 서비스 </br>
-    - <a href="https://alert-stomach-4e6.notion.site/Culture-Log-412423e6ea6440e9a564825e49ead871" terget="_blank">Notion</a><br/>
-    - <a href="https://www.figma.com/file/Fd6V0DURKbiw4VOts3uMNd/%EC%BB%AC%EC%B3%90%EB%A1%9C%EA%B7%B8-%ED%8E%98%EC%9D%B4%EC%A7%80-%EB%94%94%EC%9E%90%EC%9D%B8?type=design&node-id=0%3A1&mode=design&t=KtTdYckJceqrOriH-1" terget="_blank">Figma</a>
+    <h2 style="border-bottom: 1px solid #d8dee4; color: #282d33;">  </h2>  
+    <div style="font-weight: 700; font-size: 15px; text-align: left; color: #282d33;">  </div> 
+    - 원과 가정의 커뮤니케이션을 위한 솔루션 </br>
+    - <a href="https://alert-stomach-4e6.notion.site/2-3-f77ee2e63bbc41ee8667735ac3a8b81f?pvs=4" terget="_blank">Notion</a><br/>
+    - <a href="https://www.canva.com/design/DAF7PIYHObc/YV7GM4iWEuSKpZ1iZxM8jg/edit" terget="_blank">Figma</a>
     </div> 
     </div><div style="text-align: left;"> 
     <h2 style="border-bottom: 1px solid #d8dee4; color: #282d33;">🤼 팀원 소개 </h2>  
     <div style="font-weight: 700; font-size: 15px; text-align: left; color: #282d33;">
-    <p>- 김소미(팀장) : 디자인, 로그인, 회원가입, 인트로, 상세, 팀소개, 에러 페이지 담당</p>
-    <p>- 이상재 : 메인캘린더 연동, 요구사항 명세서 담당</p>
-    <p>- 도선경 : 마이페이지, 노션 정리, 회의록, PPT 담당</p>
-    <p>- 최동환 : 등록, 수정 페이지, 기획서 담당</p>
+    <p>- 이상재(팀장) :  총괄, 활동 앨범 (리스트, 상세, 등록, 수정, 삭제)</p>
+    <p>- 김소미 : 디자인, 화면상세설계서, 메인, 회원가입, 마이페이지, 알림장 리스트</p>
+    <p>- 도선경 : Notion, 회의록 정리, 관리자, (학부모, 원생관리)</p>
+    <p>- 김도현 : 요구사항명세서, 유치원 소식(리스트, 상세, 등록, 수정, 삭제), 알림장 상세, 등록, 수정 </p>
     </div> 
     </div>
     <div style="text-align: left;">
@@ -33,13 +33,14 @@
           <img src="https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=Sass&logoColor=white">
           <img src="https://img.shields.io/badge/Slack-4A154B?style=for-the-badge&logo=Slack&logoColor=white">
           <img src="https://img.shields.io/badge/StyledComponents-DB7093?style=for-the-badge&logo=StyledComponents&logoColor=white">
+              <img src="https://img.shields.io/badge/Redux-764ABC?style=for-the-badge&logo=Redux&logoColor=white">
           </div>
     </div>
     <div style="text-align: left;">
     <h2 style="border-bottom: 1px solid #d8dee4; color: #282d33;"> 💻 시연 영상 </h2> <br> 
     <div style="margin: 0; text-align: center;">
-    <a href="https://www.youtube.com/watch?v=sox6EovMV6k" terget="_blank">    
-<img src="https://private-user-images.githubusercontent.com/148413962/293304779-2132e1d1-8646-4339-895b-7b267180e6e5.gif?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTEiLCJleHAiOjE3MDM4MjA1ODEsIm5iZiI6MTcwMzgyMDI4MSwicGF0aCI6Ii8xNDg0MTM5NjIvMjkzMzA0Nzc5LTIxMzJlMWQxLTg2NDYtNDMzOS04OTViLTdiMjY3MTgwZTZlNS5naWY_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjMxMjI5JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDIzMTIyOVQwMzI0NDFaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT00NThjMjA2N2Y2OGQ0Yzk0OWI0NDM5OWVjNGI2ZTUyZTA1NjZkMzJhNzIxYzBmNzQ3ZDRiOTU0MTIxN2IzZmQxJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.xVrKwMJJTphrgplHc687bqmELTGCwdlWSagfqzNLtFo" alt="컬쳐로그 미리보기" style="width:100%; max-width:500px;"></a>
+    <a href="https://www.youtube.com/watch?v=SdolCKqjZKw" terget="_blank">    
+<!-- <img src="https://private-user-images.githubusercontent.com/148413962/293304779-2132e1d1-8646-4339-895b-7b267180e6e5.gif?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTEiLCJleHAiOjE3MDM4MjA1ODEsIm5iZiI6MTcwMzgyMDI4MSwicGF0aCI6Ii8xNDg0MTM5NjIvMjkzMzA0Nzc5LTIxMzJlMWQxLTg2NDYtNDMzOS04OTViLTdiMjY3MTgwZTZlNS5naWY_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjMxMjI5JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDIzMTIyOVQwMzI0NDFaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT00NThjMjA2N2Y2OGQ0Yzk0OWI0NDM5OWVjNGI2ZTUyZTA1NjZkMzJhNzIxYzBmNzQ3ZDRiOTU0MTIxN2IzZmQxJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.xVrKwMJJTphrgplHc687bqmELTGCwdlWSagfqzNLtFo" alt="떡잎유치원 미리보기" style="width:100%; max-width:500px;"> -->
+시연영상 바로가기</a>
           </div>
     </div>
-    

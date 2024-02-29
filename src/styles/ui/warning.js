@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { colors } from "../basic";
 
 // 경고창
 export const WarningWrap = styled.div`
@@ -30,4 +31,18 @@ export const WarningBox = styled.div`
     font-size: 1.2rem;
     color: #555;
   }
+`;
+
+// 모달창
+export const ModalTitle = styled.div`
+  text-align: center;
+  margin-bottom: 3rem;
+  h3 {
+    color: ${colors.greenDeep};
+    margin-bottom: 1rem;
+  }
+  white-space: pre-line;
+`;
+export const ModalBody = styled.div`
+  position: relative;
 `;
