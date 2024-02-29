@@ -3,7 +3,7 @@ import { Button, Dropdown } from "antd";
 import React from "react";
 import { Link } from "react-router-dom";
 
-const IndParentBtnComponent = ({ indList, ikidList, year, ikid, page }) => {
+const IndParentBtnComponent = ({ indList, ikidList, year, ikid, isAccept }) => {
   // 년도 선택
   const currentYear = new Date().getFullYear();
   const startYear = 2020;
@@ -40,7 +40,7 @@ const IndParentBtnComponent = ({ indList, ikidList, year, ikid, page }) => {
       </Dropdown>
       <Dropdown menu={{ items }}>
         <Button>
-          {indList[0].kidNm}
+          {ikidList[0].kidNm}
           <DownOutlined />
         </Button>
       </Dropdown>

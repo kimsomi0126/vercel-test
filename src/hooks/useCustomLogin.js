@@ -19,11 +19,20 @@ const useCustomLogin = () => {
   const loginState = useSelector(state => state.loginSlice);
 
   // 로그인 상태값 파악
+  // role 정보 (ADMIN/TEACHER/PARENT/GRADUATE)
+  const userRole = loginState.role;
+  // 선생님 + 원장 로그인 여부 (로그인/비로그인)
   const isLogin = loginState.teacherUid ? true : false;
-  const isAdminLogin = loginState.ilevel === 3 ? true : false;
-  const isTeacherLogin = loginState.ilevel === 2 ? true : false;
-  const isName = loginState.teacherNm ? true : false;
+  // 원장 로그인 여부 (로그인/비로그인)
+  const isAdminLogin = loginState.role === "ADMIN" ? true : false;
+  // 선생님 로그인 여부 (로그인/비로그인)
+  const isTeacherLogin = loginState.role === "TEACHER" ? true : false;
+  // 학부모 로그인 여부 (로그인/비로그인)
   const isParentLogin = loginState.iparent ? true : false;
+  // 선생님, 학부모 이름
+  const isName = loginState.teacherNm || loginState.parentNm;
+  // 추억앨범 제외 접근 가능한지 여부 (가능/불가능)
+  const isAccept = userRole !== "GRADUATE" ? true : false;
 
   // 로그인 기능
   const doLogin = ({ loginParam, successFn, failFn, errorFn }) => {
@@ -109,6 +118,8 @@ const useCustomLogin = () => {
     isName,
     isParentLogin,
     isTeacherLogin,
+    userRole,
+    isAccept,
     doLogin,
     doLogout,
     doParentLogin,

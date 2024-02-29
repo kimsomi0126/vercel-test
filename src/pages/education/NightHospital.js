@@ -1,38 +1,41 @@
 import React, { useEffect, useState } from "react";
 import {
   EmptyTxt,
+  HospitalDetail,
   HospitalInfo,
   HospitalItem,
   HospitalList,
   HospitalMap,
   HospitalTitle,
   HospitalWrap,
+  NightHospitalMap,
 } from "../../styles/education/hospital";
-import { FlexBox, TableWrap, TitleWrap } from "../../styles/user/mypage";
+import { TitleWrap } from "../../styles/user/mypage";
 import { PageTitle, TitleDesc } from "../../styles/basic";
 import Search from "antd/es/input/Search";
 import { PageNum } from "../../styles/adminstyle/guardianlist";
 import { Pagination } from "antd";
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
-import { getHospital } from "../../api/education/hospitalApi";
+import { getHospital, getNightHospital } from "../../api/education/hospitalApi";
 import { Map, MapMarker } from "react-kakao-maps-sdk";
 import ModalOneBtn from "../../components/ui/ModalOneBtn";
 
 const initData = [
   {
     sigunNm: "",
-    sigunCd: "",
-    facltNm: "",
-    telNo: "",
+    indutypeNm: "",
+    medcareFacltNm: "",
+    medcareFacltTelNo: "",
     refineLotNoAddr: "",
     refineRoadnmAddr: "",
+    hmpgAddr: null,
     refineZipCd: "",
     refineWgs84Logt: 0,
     refineWgs84Lat: 0,
   },
 ];
 
-const Hospital = () => {
+const NightHospital = () => {
   const navigate = useNavigate();
   // 데이터 state
   const [spotData, setSpotData] = useState(initData);
@@ -55,7 +58,7 @@ const Hospital = () => {
   // 지역검색
   const handleSearch = value => {
     // setSearchParams({ page: 1, sigunNm: value });
-    navigate(`/edu/hospital?page=1&sigunNm=${value}`);
+    navigate(`/edu/nighthospital?page=1&sigunNm=${value}`);
   };
   // 페이지네이션
   const handlePageChange = page => {
@@ -64,7 +67,7 @@ const Hospital = () => {
 
   // 정보 가져오기
   useEffect(() => {
-    getHospital({
+    getNightHospital({
       page,
       size,
       sigunNm,
@@ -118,16 +121,15 @@ const Hospital = () => {
         subTitle={subTitle}
       />
       <TitleWrap>
-        <PageTitle>어린이 예방접종 지정의료기관</PageTitle>
+        <PageTitle>어린이 야간진료 병원정보</PageTitle>
       </TitleWrap>
       <TitleDesc>
         <p>
-          경기도 내의 지역명을 검색하여, <br />
-          질병관리본부에서 제공하는
-          <b> 어린이 국가 예방접종지정 의료기관 현황</b>을 알아보세요. <br />
+          경기도 내의 지역명을 검색하여 <b>어린이 야간진료 병원정보</b>를
+          알아보세요. <br />
           <small>
-            지역별로 최대 200개까지 노출되며, 목록을 클릭하면 지도로 위치를
-            확인할 수 있습니다.
+            지역별로 최대 200개까지 노출되며, 목록을 클릭하면 상세정보를 확인할
+            수 있습니다.
           </small>
         </p>
         <Search
@@ -142,14 +144,15 @@ const Hospital = () => {
       </TitleDesc>
       <HospitalList>
         <HospitalTitle>
-          <ul className="list-4">
-            <li className="sigunNm mo">도시</li>
-            <li className="facltNm">기관이름</li>
+          <ul className="list-5">
+            <li className="sigunNm mo">지역</li>
+            <li className="indutypeNm mo">유형</li>
+            <li className="facltNm">병원명</li>
             <li className="address">상세주소</li>
             <li className="telNo">전화번호</li>
           </ul>
         </HospitalTitle>
-        {spotData[0].facltNm === "" ? (
+        {spotData[0].sigunNm === "" ? (
           <EmptyTxt>검색결과가 없습니다.</EmptyTxt>
         ) : (
           Array.isArray(spotData) &&
@@ -159,20 +162,48 @@ const Hospital = () => {
                 <ul
                   className={
                     selectedMapIndex === index && isShowMap
-                      ? "list-4 active"
-                      : "list-4"
+                      ? "list-5 active"
+                      : "list-5"
                   }
                 >
                   <li className="sigunNm mo">{item.sigunNm}</li>
-                  <li className="facltNm">{item.facltNm}</li>
+                  <li className="indutypeNm mo">{item.indutypeNm}</li>
+                  <li className="facltNm">{item.medcareFacltNm}</li>
                   <li className="address">{item.refineLotNoAddr}</li>
                   <li className="telNo">
-                    <Link to={`tel:${item.telNo}`}>{item.telNo}</Link>
+                    <Link to={`tel:${item.medcareFacltTelNo}`}>
+                      {item.medcareFacltTelNo}
+                    </Link>
                   </li>
                 </ul>
               </HospitalInfo>
               {selectedMapIndex === index && isShowMap && (
-                <HospitalMap>
+                <NightHospitalMap>
+                  <HospitalDetail>
+                    <dl>
+                      <dt>병원명</dt>
+                      <dd>{item.medcareFacltNm}</dd>
+                    </dl>
+                    <dl>
+                      <dt>병원유형</dt>
+                      <dd>{item.indutypeNm}</dd>
+                    </dl>
+                    {item.hmpgAddr ? (
+                      <dl>
+                        <dt>홈페이지</dt>
+                        <dd>
+                          <Link to={item.hmpgAddr} target="_blank">
+                            {item.hmpgAddr}
+                          </Link>
+                        </dd>
+                      </dl>
+                    ) : null}
+
+                    <dl>
+                      <dt>주소</dt>
+                      <dd>{item.refineLotNoAddr}</dd>
+                    </dl>
+                  </HospitalDetail>
                   <Map
                     center={{
                       lat: item.refineWgs84Lat,
@@ -194,55 +225,11 @@ const Hospital = () => {
                       }}
                     />
                   </Map>
-                </HospitalMap>
+                </NightHospitalMap>
               )}
             </HospitalItem>
           ))
         )}
-        {/* {Array.isArray(spotData) &&
-          spotData.map((item, index) => (
-            <HospitalItem key={index}>
-              <HospitalInfo onClick={() => handleMapInfoClick(index)}>
-                <ul
-                  className={
-                    selectedMapIndex === index && isShowMap ? "active" : ""
-                  }
-                >
-                  <li className="sigunNm mo">{item.sigunNm}</li>
-                  <li className="facltNm">{item.facltNm}</li>
-                  <li className="address">{item.refineLotNoAddr}</li>
-                  <li className="telNo">
-                    <Link to={`tel:${item.telNo}`}>{item.telNo}</Link>
-                  </li>
-                </ul>
-              </HospitalInfo>
-              {selectedMapIndex === index && isShowMap && (
-                <HospitalMap>
-                  <Map
-                    center={{
-                      lat: item.refineWgs84Lat,
-                      lng: item.refineWgs84Logt,
-                    }}
-                    level={4}
-                    className="kakao-map"
-                  >
-                    <MapMarker
-                      position={{
-                        lat: item.refineWgs84Lat,
-                        lng: item.refineWgs84Logt,
-                      }}
-                      clickable={true}
-                      onClick={() => {
-                        window.open(
-                          `https://map.kakao.com/link/map/${item.facltNm},${item.refineWgs84Lat},${item.refineWgs84Logt}`,
-                        );
-                      }}
-                    />
-                  </Map>
-                </HospitalMap>
-              )}
-            </HospitalItem>
-          ))} */}
       </HospitalList>
       <PageNum>
         <Pagination
@@ -256,4 +243,4 @@ const Hospital = () => {
   );
 };
 
-export default Hospital;
+export default NightHospital;

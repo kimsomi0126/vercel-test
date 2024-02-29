@@ -57,8 +57,14 @@ const IndivNotiList = () => {
   const searchValue = serchParams.get("searchValue") || "";
 
   // 로그인 회원 정보에서 아이 리스트 추출
-  const { loginState, isLogin, isParentLogin, isTeacherLogin, isAdminLogin } =
-    useCustomLogin();
+  const {
+    loginState,
+    isLogin,
+    isParentLogin,
+    isTeacherLogin,
+    isAdminLogin,
+    isAccept,
+  } = useCustomLogin();
   const ikidList = loginState.kidList;
 
   // 페이지네이션
@@ -99,6 +105,11 @@ const IndivNotiList = () => {
         setIsOpen(true);
         return;
       }
+      if (!isAccept) {
+        // 졸업생 학부모일 경우
+        return;
+      }
+
       getIndParentList({
         page,
         year,
@@ -142,21 +153,21 @@ const IndivNotiList = () => {
     setCount(res.noticeCnt);
   };
   const errorFn = res => {
-    // console.log(res);
-    setIsOpen(true);
-    setTitle("데이터 없음");
-    setSubTitle(res);
+    console.log(res);
+    // setIsOpen(true);
+    // setTitle("데이터 없음");
+    // setSubTitle(res);
 
-    const url = isLogin
-      ? `/ind?year=${year}&page=1&iclass=${iclass}&searchValue=${searchValue}`
-      : `/ind?year=${year}&page=1&ikid=${ikid}&searchValue=${searchValue}`;
+    // const url = isLogin
+    //   ? `/ind?year=${year}&page=1&iclass=${iclass}&searchValue=${searchValue}`
+    //   : `/ind?year=${year}&page=1&ikid=${ikid}&searchValue=${searchValue}`;
 
-    if (fromTo != 3) {
-      setFromTo(3);
-      setIsNavigate(url);
-    } else {
-      setIsNavigate(-1);
-    }
+    // if (fromTo != 3) {
+    //   setFromTo(3);
+    //   setIsNavigate(url);
+    // } else {
+    //   setIsNavigate(-1);
+    // }
   };
 
   // 작성자 분류
@@ -212,12 +223,14 @@ const IndivNotiList = () => {
   };
 
   const errorSerchFn = res => {
-    setIsOpen(true);
-    setTitle("데이터 없음");
-    setSubTitle(res);
-    setSearchParams({ page: 1, year, iclass, fromTo, searchValue: "" });
+    // setIsOpen(true);
+    // setTitle("데이터 없음");
+    // setSubTitle(res);
+    // setSearchParams({ page: 1, year, iclass, fromTo, searchValue: "" });
+    console.log(res);
   };
 
+  console.log(loginState);
   return (
     <IndWrap>
       {/* 안내창 */}
@@ -271,6 +284,7 @@ const IndivNotiList = () => {
               ikid={ikid}
               year={year}
               page={page}
+              isAccept={isAccept}
             />
           )}
           <Search

@@ -18,7 +18,7 @@ const MainBannerComponent = () => {
       </MainBanner>
       <MainBanner className="bnr2">
         <Link to="/edu">
-          <h3>교육정보</h3>
+          <h3>육아정보</h3>
           <MainPinkBtn>바로가기</MainPinkBtn>
         </Link>
       </MainBanner>

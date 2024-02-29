@@ -50,7 +50,7 @@ const SideMenu = () => {
       ],
     ),
     getItem(
-      "교육정보",
+      "육아정보",
       "2",
       <img
         src={process.env.PUBLIC_URL + "/images/common/sidebar/education.svg"}
@@ -59,6 +59,10 @@ const SideMenu = () => {
         // getItem(<Link to="/edu">교육과정</Link>, "2-1"),
         // getItem(<Link to="/edu/specialact">방과후활동</Link>, "2-2"),
         getItem(<Link to="/edu/hospital?page=1">예방접종기관정보</Link>, "2-3"),
+        getItem(
+          <Link to="/edu/nighthospital?page=1">야간진료병원정보</Link>,
+          "2-4",
+        ),
       ],
     ),
     getItem(

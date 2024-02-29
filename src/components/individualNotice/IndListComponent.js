@@ -39,7 +39,7 @@ const IndListComponent = ({ listData, year, ikid, iclass, page }) => {
           <div
             style={{ textAlign: "center", width: "100%", marginTop: "5rem" }}
           >
-            알림장 내용이 없습니다.
+            조회되는 정보가 없습니다.
           </div>
         ) : (
           Array.isArray(listData) &&
