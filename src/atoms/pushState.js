@@ -1,7 +1,7 @@
 import { atom } from "recoil";
 import { recoilPersist } from "recoil-persist";
 const initState = {
-  pushList: [{ iuser: 0, totalCnt: 0, data: [] }],
+  pushList: [],
 };
 
 const { persistAtom } = recoilPersist();

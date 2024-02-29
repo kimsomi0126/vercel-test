@@ -49,9 +49,9 @@ const NavBar = () => {
 
   // 알림사용 승인 후 firebase 토큰 가져오기
   useEffect(() => {
-    // setNotiPush({
-    //   pushList: [],
-    // });
+    setNotiPush({
+      pushList: [],
+    });
     if (Notification.permission !== "granted") {
       Notification.requestPermission().then(permission => {
         if (permission === "granted") {
