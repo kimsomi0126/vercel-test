@@ -1,0 +1,15 @@
+{
+  "imedia": 7,
+  "title": "테스트파일",
+  "comment": "테스트중입니다.",
+  "date": "2023-12-29",
+  "isSaw": 1,
+  "genrePk": 2,
+  "star": 5,
+  "pics": [
+    "https://pds.joongang.co.kr/news/component/htmlphoto_mmdata/201602/19/htm_20160219171437117902.jpg",
+    "https://marketplace.canva.com/EADxVDYfU6E/2/0/1131w/canva-%ED%9D%91%EB%B0%B1-%EC%97%B0%EC%A3%BC%ED%99%A9%EC%83%89-%EC%96%B4%EB%91%90%EC%9A%B4-%EC%98%81%ED%99%94-%ED%8F%AC%EC%8A%A4%ED%84%B0-rfPXp4tWD8M.jpg",
+    "https://entertainimg.kbsmedia.co.kr/cms/uploads/CONTENTS_20210423093411_18a0c4c6fe376b3670c67b94520e4448.jpg",
+    "https://i.namu.wiki/i/knBPT7KKEBsRPQnebCJ9TGAPwnkEQ4D6vtu_gtHMwWBFKjUb1cyslAMui3FzSTPwl2mC2acrAzxEcjJ1pOFPfg.webp"
+  ]
+}

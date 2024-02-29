@@ -1,0 +1,12 @@
+{
+    "imedia": 0,
+    "iuser": 0,
+    "genrepk": 0,
+    "title": "string",
+    "date": "string",
+    "comment": "string",
+    "star": 0,
+    "pics": [
+      "string"
+    ]
+  }
