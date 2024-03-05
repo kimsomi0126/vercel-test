@@ -104,9 +104,10 @@ const NotiAlarm = () => {
                   <ul>
                     <li className="noti-kid">
                       <span className="noti-date">
-                        {item.createdAt ? item.createdAt.split(" ")[0] : null}
+                        {item.createdAt || item.cmtCreatedAt}
                       </span>{" "}
-                      {item.kidNm} {item.noticeTitle ? "알림장" : "추억앨범"}{" "}
+                      <br />
+                      {item.kidNm} {item.inotice ? "알림장" : "추억앨범"}{" "}
                       {item.noticeComment || item.noticeComment
                         ? "새 댓글"
                         : null}
