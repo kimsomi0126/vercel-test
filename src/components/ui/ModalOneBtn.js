@@ -1,0 +1,39 @@
+import { Modal } from "antd";
+import React from "react";
+import { OrangeBtn, PinkBtn } from "../../styles/ui/buttons";
+import { ModalBody, ModalTitle } from "../../styles/ui/warning";
+
+const ModalOneBtn = ({ isOpen, handleOk, title, subTitle, children }) => {
+  const modalStyles = {
+    footer: {
+      display: "flex",
+      justifyContent: "center",
+      gap: "2rem",
+    },
+    body: {
+      paddingTop: "2rem",
+    },
+  };
+  return (
+    <Modal
+      open={isOpen}
+      onOk={handleOk}
+      closeIcon={null}
+      width={400}
+      footer={[
+        <PinkBtn key="submit" type="primary" onClick={handleOk}>
+          확인
+        </PinkBtn>,
+      ]}
+      styles={modalStyles}
+    >
+      <ModalTitle>
+        <h3>{title}</h3>
+        <p>{subTitle}</p>
+      </ModalTitle>
+      <ModalBody>{children}</ModalBody>
+    </Modal>
+  );
+};
+
+export default ModalOneBtn;
